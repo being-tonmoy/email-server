@@ -1,28 +1,23 @@
 {
   "version": 2,
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "functions": {
-    "api/health.js": {
-      "memory": 128,
-      "maxDuration": 10
+  "builds": [
+    {
+      "src": "api/health.js",
+      "use": "@vercel/node"
     },
-    "api/submit.js": {
-      "memory": 256,
-      "maxDuration": 30
+    {
+      "src": "api/submit.js",
+      "use": "@vercel/node"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/api/health",
-      "dest": "/api/health.js",
-      "methods": ["GET"]
+      "dest": "api/health.js"
     },
     {
       "src": "/api/email/application-form/submit",
-      "dest": "/api/submit.js",
-      "methods": ["POST"]
+      "dest": "api/submit.js"
     }
   ]
 }
