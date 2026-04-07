@@ -1,0 +1,7 @@
+# Email Server - Ignore local environment files
+.env
+.env.local
+node_modules/
+.DS_Store
+*.log
+.vercel
