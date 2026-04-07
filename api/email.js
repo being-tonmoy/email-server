@@ -40,6 +40,16 @@ const sendApplicationFormSubmission = async (formData, recipientEmail) => {
 // ==================== REST API ROUTES ====================
 
 /**
+ * Root Endpoint
+ * GET /
+ */
+app.get('/', (req, res) => {
+  res.status(200).json({
+    message: 'Hello human. This is a basic Email Server created by Brainless Loco'
+  });
+});
+
+/**
  * Health Check Endpoint
  * GET /api/health
  */
