@@ -2,7 +2,7 @@
   "name": "email-server",
   "version": "1.0.0",
   "private": true,
-  "main": "api/email.js",
+  "main": "index.js",
   "scripts": {
     "dev": "node api/email.js",
     "start": "node api/email.js"

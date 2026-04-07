@@ -193,13 +193,16 @@ app.use((err, req, res, next) => {
 
 // ==================== START SERVER ====================
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`📧 Email server running on port ${PORT}`);
-  console.log(`Health check: GET http://localhost:${PORT}/api/health`);
-  // console.log(`API routes:`);
-  // console.log(`  POST http://localhost:${PORT}/api/email/application-form/submit`);
-  // console.log(`  POST http://localhost:${PORT}/api/email/send`);
-});
+// Only start server locally, not on Vercel (which handles server management)
+if (!process.env.VERCEL) {
+  const PORT = process.env.PORT || 3001;
+  app.listen(PORT, () => {
+    console.log(`📧 Email server running on port ${PORT}`);
+    console.log(`Health check: GET http://localhost:${PORT}/api/health`);
+    // console.log(`API routes:`);
+    // console.log(`  POST http://localhost:${PORT}/api/email/application-form/submit`);
+    // console.log(`  POST http://localhost:${PORT}/api/email/send`);
+  });
+}
 
 module.exports = app;
