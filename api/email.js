@@ -6,7 +6,20 @@ const { applicationFormSubmissionTemplate } = require('./emailTemplates');
 const app = express();
 
 // Middleware
-app.use(cors());
+// Configure CORS to allow requests from frontend origins
+const corsOptions = {
+  origin: [
+    'https://cu-std-2nd-year.vercel.app',  // Production frontend
+    'http://localhost:3000',                // Local development
+    'http://localhost:3001'                 // Local testing
+  ],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Configure nodemailer with environment variables
