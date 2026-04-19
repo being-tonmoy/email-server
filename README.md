@@ -162,8 +162,8 @@ curl -X POST http://localhost:3001/api/email/application-form/submit \
 3. **Add Environment Variables:**
    - Go to Settings → Environment Variables
    - Add:
-     - `EMAIL_USER` = `ict@cu.ac.bd`
-     - `EMAIL_PASSWORD` = `ucui xflj auma rlww`
+     - `EMAIL_USER` = `xxxxxxxxx@xx.xx.xx.xx`
+     - `EMAIL_PASSWORD` = `xxxx xxxx xxxx xxxx`
 
 4. **Get Vercel URL:**
    - After deployment: `https://email-server-xyz.vercel.app`
